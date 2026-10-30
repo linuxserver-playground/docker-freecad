@@ -20,7 +20,11 @@ RUN \
     /usr/share/selkies/www/icon.png \
     https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/freecad-logo.png && \
   echo "**** install packages ****" && \
-  DOWNLOAD_URL=$(curl -sX GET "https://api.github.com/repos/FreeCAD/FreeCAD/releases/latest" \
+  if [ -z ${FREECAD_VERSION+x} ]; then \
+    FREECAD_VERSION=$(curl -sX GET "https://api.github.com/repos/FreeCAD/FreeCAD/releases/latest" \
+      | jq -r '.tag_name'); \
+  fi && \
+  DOWNLOAD_URL=$(curl -sX GET "https://api.github.com/repos/FreeCAD/FreeCAD/releases/tags/${FREECAD_VERSION}" \
     | jq -r 'first(.assets[].browser_download_url | select(test("Linux-x86_64-py311.AppImage")))') && \
   curl -o \
     /tmp/freecad.app -L \

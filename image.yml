@@ -10,6 +10,9 @@ upstream:
   version:
     type: github_release
     repo: FreeCAD/FreeCAD
+    require_assets:
+      - asset: 'Linux-x86_64-py311\.AppImage$'
+      - asset: 'Linux-aarch64-py311\.AppImage$'
   notes:
     type: github_release
     repo: FreeCAD/FreeCAD
