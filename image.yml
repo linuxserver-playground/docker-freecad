@@ -16,6 +16,13 @@ upstream:
   notes:
     type: github_release
     repo: FreeCAD/FreeCAD
+  sponsor:
+  - name: FreeCAD
+    url: https://wiki.freecad.org/Donate
+  - name: FreeCAD (GitHub Sponsors)
+    url: https://github.com/sponsors/FreeCAD
+  - name: FreeCAD (Open Collective)
+    url: https://opencollective.com/freecad
 
 release:
   branch: master
