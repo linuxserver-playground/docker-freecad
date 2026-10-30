@@ -1,0 +1,3 @@
+FreeCAD: https://wiki.freecad.org/Donate
+FreeCAD (GitHub Sponsors): https://github.com/sponsors/FreeCAD
+FreeCAD (Open Collective): https://opencollective.com/freecad
